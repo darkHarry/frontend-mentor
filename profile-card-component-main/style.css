@@ -1,0 +1,114 @@
+:root {
+  --Dark-cyan: hsl(185, 75%, 39%);
+  --Very-dark-desaturated-blue: hsl(229, 23%, 23%);
+  --Dark-grayish-blue: hsl(227, 10%, 46%);
+  --Dark-gray: hsl(0, 0%, 59%);
+  --heavy: 700;
+  --light: 400;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  height: 100vh;
+  font-family: 'Kumbh Sans', sans-serif;
+  background: var(--Dark-cyan);
+  background-image: url("images/bg-pattern-top.svg"), url("images/bg-pattern-bottom.svg");
+  background-position: calc(37.558vw - 1000px) -35rem, calc(53.521vw - 71px) 20rem;
+  background-size: 1100px;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 350px;
+  height: 400px;
+  background: url("images/bg-pattern-card.svg");
+  border-radius: 15px;
+  z-index: -2;
+  display: grid;
+  grid-template-rows: repeat(8, 1fr);
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.layover {
+  grid-row: 4 / -1;
+  grid-column: 1 / -1;
+  background: #fff;
+  z-index: -1;
+  border-radius: 0 0 15px 15px;
+}
+
+img.avatar {
+  justify-self: center;
+  display: block;
+  grid-row: 3 / span 2;
+  grid-column: 2 / 3;
+  max-width: 100%;
+  height: auto;
+  border: 5px solid #fff;
+  border-radius: 50%;
+}
+
+.details {
+  grid-row: 5 / span 2;
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.name {
+  font-weight: var(--heavy);
+  font-size: 1.2rem;
+  color: var(--Very-dark-desaturated-blue);
+}
+
+.age {
+  padding-left: 5px;
+  color: var(--Dark-gray);
+}
+
+.place {
+  color: var(--Dark-grayish-blue);
+}
+
+.stats {
+  box-shadow: 0 0 1px 0 var(--Dark-gray);
+  grid-row: 7 / span 2;
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+}
+
+.stat {
+  text-align: center;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.stat-number {
+  font-weight: var(--heavy);
+  font-size: 1.2rem;
+  color: var(--Very-dark-desaturated-blue);
+}
+
+.stat-label {
+  font-weight: var(--light);
+  font-size: 0.9rem;
+  color: var(--Dark-gray);
+}
